@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="C:\Users\Dell\Downloads\sample_form\css\bootstrap.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <style>
+        .container {
+            background: linear-gradient(to right, rgba(14, 179, 230, 0.705), rgb(138, 84, 133));
+            padding: 160px;
+        }
+
+        .form {
+            background-color: white;
+            padding: 60px;
+            margin: auto;
+            border-radius: 10px;
+
+        }
+
+
+        .row input {
+
+            border-style: solid double;
+            border-color: grey;
+            margin-bottom: 6px;
+            /* width: 90%; */
+
+        }
+
+        .row label {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+
+
+        #underline {
+            border-bottom: 2px solid;
+            border-color: linear-gradient(to right, rgba(14, 179, 230, 0.705), rgb(110, 38, 104));
+            width: 6%;
+        }
+
+        .form .row {
+            margin-bottom: 60px;
+        }
+
+        .invalid-error {
+            color: red;
+        }
+
+        #star {
+            color: red;
+        }
+
+        #submitbtn {
+            color: white;
+            background-color: chocolate;
+            font-weight: bold;
+            border: none;
+            box-shadow: 15em;
+            border-radius: 3px;
+            margin-left: 30%;
+            width: 35%;
+            height: 50px;
+            text-decoration: double;
+        }
+
+        #clearbtn {
+            color: black;
+            background-color: rgb(201, 196, 196);
+            box-shadow: 15em;
+            border: none;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-left: 30%;
+            width: 35%;
+            height: 50px;
+            text-decoration: double;
+        }
+</style>
+</head>
+
+<body class="container">
+
+    <form class="form" id="myForm">
+        <h2 id="underline">Registration</h2>
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Name :<span id="star">*</span></label>
+                <input type="hidden" id="indexvalue">
+                <input type="text" class="form-control" id="name" placeholder="Enter your Name">
+                <small>
+                    <div id="errorname" class="invalid-error"></div>
+                </small>
+            </div>
+            <div class="col-xs-6  col-sm-6  col-lg-6 col-xl-6">
+                <label>User Id: <span id="star">*</span></label>
+
+                <input type="text" class="form-control" id="userid" placeholder="Enter your User Id">
+
+                <div id="erroruserid" class="invalid-error"></div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Phone Number : <span id="star">*</span></label>
+                <input type="number" class="form-control" id="phonenumber" placeholder="Enter your number">
+                <small>
+                    <div id="errorphonenumber" class="invalid-error"></div>
+                </small>
+            </div>
+
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Email :<span id="star">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                <small>
+                    <div id="erroremail" class="invalid-error"></div>
+                </small>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Address :<span id="star">*</span></label>
+                <input type="text" class="form-control" id="address" placeholder="Enter your Address">
+                <small>
+                    <div id="erroraddress" class="invalid-error"></div>
+                </small>
+            </div>
+
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>ZIP code :<span id="star">*</span></label>
+                <input type="number" class="form-control" id="zipcode" placeholder="Enter your ZIP code">
+                <small>
+                    <div id="errorzipcode" class="invalid-error"></div>
+                </small>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Date of birth:<span id="star">*</span></label>
+                <input type="date" class="form-control" id="dateofbirth" placeholder="enter Date_Of_Birth">
+                <small>
+                    <div id="errordateofbirth" class="invalid-error"></div>
+                </small>
+            </div>
+
+
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6">
+                <label>Country : <span id="star">*</span></label>
+                <select class="form-control" id="country">
+                    <option value="null">Select an option</option>
+                    <option value="India">India</option>
+                    <option value="Oman">Oman</option>
+                    <option value="America">America</option>
+                    <option value="German">America</option>
+                </select>
+                <div id="errorcountry" class="invalid-error"></div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <div><label>Gender : <span id="star">*</span></label></div>
+                <div>
+                    <span>
+                        <input type="radio" id="male" name="radiobtn" class="gender" value="male" /> Male
+                    </span><br>
+                    <span>
+                        <input type="radio" id="female" name="radiobtn" class="gender" value="female" /> Female
+                    </span><br>
+                    <span>
+                        <input type="radio" id="others" name="radiobtn" class="gender" value="others" /> Others
+                    </span>
+                </div>
+                <small>
+                    <div id="errorgender" class="invalid-error"></div>
+                </small>
+            </div>
+
+
+
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <div> <label>Language : <span id="star">*</span></label></div>
+                <div>
+                    <span>
+                        <input type="checkbox" class="language" id="tamil" name="checkbox" value="tamil" /> Tamil
+                    </span><br>
+                    <span>
+                        <input type="checkbox" class="language" id="english" name="checkbox" value="english" /> English
+                    </span><br>
+                    <span>
+                        <input type="checkbox" class="language" id="malayalam" name="checkbox"
+                            value="malayalam" /> Malayalam
+                    </span><br>
+                    <span>
+                        <input type="checkbox" class="language" id="baduga" name="checkbox" value="baduga" /> Baduga
+                    </span>
+
+                </div>
+                <small>
+                    <div id="errorlanguage" class="invalid-error"></div>
+                </small>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-12 col-xl-12">
+                <div>
+                    <label>Message : <span id="star">*</span></label><br>
+                    <textarea id="message" class="form-control" name="aboutbox"></textarea>
+                </div>
+                <div id="errormessage" class="invalid-error"></div>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Password :<span id="star">*</span></label>
+                <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                <small>
+                    <div id="errorpassword" class="invalid-error"></div>
+                </small>
+            </div>
+
+
+            <div class="col-xs-12  col-sm-12  col-lg-6 col-xl-6 ">
+                <label>Confirm Password :<span id="star">*</span></label>
+                <input type="password" class="form-control" id="confirmpassword" placeholder="Confirm your Password">
+                <small>
+                    <div id="errorconfirmpassword" class="invalid-error"></div>
+                </small>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-xs-6  col-sm-6  col-lg-6 col-xl-6" style="text-align:left;">
+                <button type="submit" id="submitbtn">Submit</button>
+            </div>
+            <div class="col-xs-6  col-sm-6  col-lg-6 col-xl-6" style="text-align:left;">
+                <button type="clear" id="clearbtn">Clear</button>
+            </div>
+        </div>
+    </form>
+
+
+    <table id="tble" class="table">
+        <thead>
+
+            <tr>
+
+                <th>Name </th>
+                <th>UserId </th>
+                <th>Phonenumber </th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Zip Code</th>
+                <th>Date of birth</th>
+                <th>Country</th>
+                <th>Gender</th>
+                <th>Language</th>
+                <th>message</th>
+                <th>Password</th>
+                <th>Confirm_password</th>
+
+            </tr>
+        </thead>
+        <tbody id="tbbdy">
+
+        </tbody>
+
+    </table>
+
+    <script>
+
+        $(document).ready(function () {
+            $("#submitbtn").click(function (event) {
+                event.preventDefault();
+
+                var checkname = checkuserid = checkphonenumber = checkemail = checkaddress = checkzipcode = checkdateofbirth = checkcountry = checkgender = checklanguage = checkmessage = checkpassword = checkconfirm_password = true
+
+                var name = $('#name').val();
+                if (name === '') {
+                    $("#errorname").text('Please Enter the name.');
+                    checkname = false;
+                }
+                else if (name.length > 15) {
+                    $("#errorname").text("Please Enter character b/w 5 to 15.");
+                    checkname = false;
+                }
+                else if (name.length < 5) {
+                    $("#errorname").text("Please Enter character b/w 5 to 15.");
+                    checkname = false;
+                }
+                else {
+                    $("#errorname").text('');
+                    checkname = true;
+                }
+
+
+
+                var userid = $('#userid').val();
+                if (userid === '') {
+                    $("#erroruserid").text('Please Enter the ID.');
+                    checkuserid = false;
+                }
+                else if (userid.length > 15) {
+                    $("#erroruserid").text("Please Enter ID below 15 character.");
+                    checkuserid = false;
+                }
+                else if (userid.length < 4) {
+                    $("#erroruserid").text("Please Enter ID atleast 4 character.");
+                    checkuserid = false;
+                }
+                else {
+
+                    $("#erroruserid").text('');
+                    checkuserid = true;
+                }
+
+
+
+                var phonenumber = $('#phonenumber').val();
+                if (phonenumber === '') {
+                    $("#errorphonenumber").text('Please Enter the phonenumber.');
+                    checkphonenumber = false;
+                }
+                else if (phonenumber.length < 10) {
+                    $("#errorphonenumber").text("Please Enter valid phonenumber.");
+                    checkphonenumber = false;
+                }
+                else if (phonenumber.length > 10) {
+                    $("#errorphonenumber").text("Please Enter  10 number .");
+                    checkphonenumber = false;
+                }
+                else {
+                    $("#errorphonenumber").text('');
+                    checkphonenumber = true;
+                }
+
+
+
+                var email = $('#email').val();
+                if (email === '') {
+                    $("#erroremail").text('Please Enter the email.');
+                    checkemail = false;
+                }
+                else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+                    $("#erroremail").text('Please Enter the correct formate.');
+                    checkemail = false;
+                }
+                else {
+                    $("#erroremail").text('');
+                    checkemail = true;
+                }
+
+
+
+                var address = $('#address').val();
+                if (address === '') {
+                    $("#erroraddress").text('Please Enter the address.');
+                    checkaddress = false;
+                }
+                else {
+                    $("#erroraddress").text('');
+                    checkaddress = true;
+                }
+
+
+
+                var zipcode = $('#zipcode').val();
+                if (zipcode === '') {
+                    $("#errorzipcode").text('Please Enter the zipcode.');
+                    checkzipcode = false;
+                }
+                else if (zipcode.length > 6) {
+                    $("#errorzipcode").text("Please check zipcode.");
+                    checkzipcode = false;
+                }
+                else if (zipcode.length < 6) {
+                    $("#errorzipcode").text("Please check zipcode.");
+                    checkzipcode = false;
+                }
+                else {
+                    $("#errorzipcode").text('');
+                    checkzipcode = true;
+                }
+
+
+
+                var dateofbirth = $('#dateofbirth').val();
+                if (dateofbirth === '') {
+                    $("#errordateofbirth").text('Please Enter the dateofbirth.');
+                    checkdateofbirth = false;
+                }
+                else {
+                    $("#errordateofbirth").text('');
+                    checkdateofbirth = true;
+                }
+
+                var country = $("#country").val();
+                if (country == "null") {
+                    $("#errorcountry").text("plse select your country");
+                    checkcountry = false;
+                }
+                else {
+                    $("#errorcountry").text("");
+                    checkcountry = true;
+                }
+
+
+
+                var gender = $(".gender:checked").val();
+                if (gender) {
+                    $("#errorgender").text('');
+                    checkgender = true;
+
+                }
+                else {
+                    $("#errorgender").text("please select one");
+                    checkgender = false;
+                }
+
+
+
+                var language = $(".language:checked").val();
+                if (language) {
+                    $("#errorlanguage").text('');
+                    checklanguage = true;
+                }
+                else {
+                    $("#errorlanguage").text("please select one");
+                    checklanguage = false;
+                }
+
+
+                // var language = [];
+                // $('input[name=checkbox]:checked').each(function () {
+                //     language.push($(this).val());
+                // });
+                // if (language.length > 0) {
+                //     $("#errorlanguage").text('');
+                //     checklanguage = true;
+                //     // alert('language: ' + language.join(', '));
+                //     console.log(language)
+                // } else {
+                //     $("#errorlanguage").text("Please select at least one language.");
+                //     checklanguage = false;
+                    
+                // }
+
+
+
+                var message = $('#message').val();
+                if (message === '') {
+                    $("#errormessage").text('Please Enter some text.');
+                    checkmessage = false;
+                }
+                else if (message.length > 255) {
+                    $("#errormessage").text("Please Enter characters under 255.");
+                    checkmessage = false;
+                }
+                else if (message.length < 10) {
+                    $("#errormessage").text("Please Enter atleast 10 characters ");
+                    checkmessage = false;
+                }
+                else {
+                    $("#errormessage").text('');
+                    checkmessage = true;
+                }
+
+
+
+                var password = $('#password').val();
+                if (password === '') {
+                    $("#errorpassword").text('Please Enter the password.');
+                    checkpassword = false;
+                }
+                else if (!/^[A-Za-z]\w{7,14}$/.test(password)) {
+                    $("#errorpassword").text('Please Enter strong password');
+                    checkpassword = false;
+                }
+                else {
+                    $("#errorpassword").text('');
+                    checkpassword = true;
+                }
+
+
+
+                var confirmpassword = $('#confirmpassword').val();
+                if (confirmpassword === '') {
+                    $("#errorconfirmpassword").text('Please confirm your password.');
+                    checkconfirmpassword = false;
+                }
+                else if (confirmpassword != password) {
+                    $("#errorconfirmpassword").text('confirm your password correctly');
+                    checkconfirmpassword = false;
+                }
+                else {
+                    $("#errorconfirmpassword").text('');
+                    checkconfirmpassword = true;
+                }
+
+                if (checkname && checkuserid && checkphonenumber && checkemail && checkaddress && checkzipcode && checkdateofbirth && checkcountry && checkgender && checklanguage && checkmessage && checkpassword && checkconfirmpassword) {
+                    var checkindexval = $('#indexvalue').val();
+                    if (checkindexval !== '') {
+
+                        var i = name + '***' + userid + '***' + phonenumber + '***' + email + '***' + address + '***' + zipcode + '***' + dateofbirth + '***' + country + '***' + gender + '***' + language + '***' + message + '***' + password + '***' + confirmpassword;
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(0)').text(name);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(1)').text(userid);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(2)').text(phonenumber);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(3)').text(email);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(4)').text(address);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(5)').text(zipcode);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(6)').text(dateofbirth);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(7)').text(country);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(8)').text(gender);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(9)').text(language);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(10)').text(message);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(11)').text(password);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(12)').text(confirmpassword);
+                        $('#tble tbody tr:nth(' + checkindexval + ') td:nth(13)').html("<button  class='editfn'>Edit</button><br><button id='dlt'>Delete</button> <input type='hidden' rowval='" + checkindexval + "' name='tabledata[]' value='" + i + "'>")
+                        $("#myForm").trigger("reset");
+                        $('#submitbtn').text("Submit");
+                    }
+                    else {
+
+                        var i = name + '***' + userid + '***' + phonenumber + '***' + email + '***' + address + '***' + zipcode + '***' + dateofbirth + '***' + country + '***' + gender + '***' + language + '***' + message + '***' + password + '***' + confirmpassword;
+                        var rowlenth = $('#tble tbody tr').length;
+                        var row = "<tr><td>" + name + "</td><td>" + userid + "</td><td>" + phonenumber + "</td><td>" + email + "</td><td>" + address + "</td><td>"
+                            + zipcode + "</td><td>" + dateofbirth + "</td><td>" + country + "</td><td>" + gender + "</td><td>" + language + "</td><td>" + message + "</td><td>" + password + "</td><td>" + confirmpassword + "</td><td><button  class='editfn'>Edit</button><br><button id='dlt'>Delete</button> <input type='hidden' rowval='" + rowlenth + "' name='tabledata[]' value='" + i + "'></td></tr>";
+                        $("#tbbdy").append(row);
+
+                        $("#myForm").trigger("reset");
+                    }
+                    alert("Login Success");
+                }
+            });
+
+            $(document).on("click", ".editfn", function (event) {
+                event.preventDefault();
+                var editrow = $(this).parent().find("input[name='tabledata[]']").val();
+                // console.log(editrow)
+                var indexval = $(this).parent().find("input[name='tabledata[]']").attr('rowval');
+
+                var str = editrow.split("***");
+                // console.log(str)
+
+                $('#name').val(str[0]);
+                $('#userid').val(str[1]);
+                $('#phonenumber').val(str[2]);
+                $('#email').val(str[3]);
+                $('#address').val(str[4]);
+                $('#zipcode').val(str[5]);
+                $('#dateofbirth').val(str[6]);
+                $('#country').val(str[7]);
+                var value = str[8];
+                $("input[name=radiobtn][value=" + value +"]").prop('checked', true);
+                // var value = str[9];
+                // console.log(value);
+                // $('input[name=checkbox][value=" ' + value +' "]').prop('checked', true);
+
+                var value =str[9].split();
+                console.log(value);
+                $("input[name=checkbox][value=" + value +" ]").prop('checked', true);
+                $('#message').val(str[10]);
+                $('#password').val(str[11]);
+                $('#confirmpassword').val(str[12]);
+                $('#indexvalue').val(indexval);
+                $('#submitbtn').text("update");
+
+            });
+
+
+            $(document).on("click", "#dlt", function (event) {
+                event.preventDefault();
+                $(this).parent().parent().remove();
+            });
+
+
+            $(document).on("click", "#clearbtn", function (event) {
+                event.preventDefault();
+                
+                $("#myForm").trigger("reset");
+                
+                $('#submitbtn').text("submit");
+                $("#indexvalue").val("");
+            });
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
